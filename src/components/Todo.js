@@ -1,4 +1,4 @@
-export default function Todo({ todo, onToggleItem, isDark }) {
+export default function Todo({ todo, onToggleItem }) {
   return (
     <li onClick={() => onToggleItem(todo.id)}>
       <div

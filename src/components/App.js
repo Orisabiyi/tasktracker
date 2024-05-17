@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AppTitle from "./AppTitle";
 import CreateTodo from "./CreateTodo";
+import Stats from "./Stats";
 import TodoList from "./TodoList";
 
 export default function App() {
@@ -37,16 +38,15 @@ export default function App() {
 
         <CreateTodo onTodo={handleTodo} isDark={isDark} />
 
-        {todos.length !== 0 ? (
-          <TodoList
-            todos={todos}
-            sortBy={sortBy}
-            isDark={isDark}
-            onToggleItem={handleToggleItem}
-            onSortBy={handleSortBy}
-          />
-        ) : (
-          ""
+        {todos.length !== 0 && (
+          <div className={`todo-container ${isDark && "todo-container-dark"}`}>
+            <TodoList
+              todos={todos}
+              sortBy={sortBy}
+              onToggleItem={handleToggleItem}
+            />
+            <Stats todos={todos} onSortBy={handleSortBy} />
+          </div>
         )}
       </div>
     </div>

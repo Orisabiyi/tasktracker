@@ -2,7 +2,7 @@ export default function Stats({ todos, onSortBy }) {
   const todoLength = todos.filter((todo) => todo.completed !== true).length;
 
   return (
-    <li className="stats">
+    <div className="stats">
       <div> {todoLength} items left</div>
 
       <div>
@@ -18,6 +18,6 @@ export default function Stats({ todos, onSortBy }) {
       </div>
 
       <div>Clear Completed</div>
-    </li>
+    </div>
   );
 }
