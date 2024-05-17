@@ -112,12 +112,12 @@ body {
 .todo-list {
   color: var(--very-dark-grayish-blue);
   background-color: var(--very-light-gray);
-  border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
   list-style: none;
 }
 
-.todo-list li {
+.todo-list li:not(:last-child) {
   padding: 2.5rem 7rem;
   position: relative;
   cursor: pointer;
@@ -130,4 +130,9 @@ body {
 .todo-completed {
   text-decoration: line-through;
   color: var(--light-grayish-blue);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
 }

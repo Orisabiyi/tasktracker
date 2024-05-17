@@ -1,3 +1,15 @@
 export default function Stats() {
-  return <div className="stats"></div>;
+  return (
+    <li className="stats">
+      <span> X items left</span>
+
+      <div>
+        <span>All</span>
+        <span>Active</span>
+        <span>Completed</span>
+      </div>
+
+      <span>clear completed</span>
+    </li>
+  );
 }

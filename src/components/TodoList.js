@@ -1,3 +1,4 @@
+import Stats from "./Stats";
 import Todo from "./Todo";
 
 export default function TodoList({ todos, onToggleItem }) {
@@ -6,6 +7,8 @@ export default function TodoList({ todos, onToggleItem }) {
       {todos.map((todo) => (
         <Todo todo={todo} onToggleItem={onToggleItem} key={todo.id} />
       ))}
+
+      <Stats />
     </ul>
   );
 }
