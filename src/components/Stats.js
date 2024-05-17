@@ -1,5 +1,14 @@
-export default function Stats({ todos, onSortBy }) {
+export default function Stats({ todos, onSortBy, onSetTodo }) {
   const todoLength = todos.filter((todo) => todo.completed !== true).length;
+
+  function handleClearTodo() {
+    if (
+      window.confirm(
+        "Are you sure you want to clear the list. There is no turning back"
+      )
+    )
+      onSetTodo([]);
+  }
 
   return (
     <div className="stats">
@@ -17,7 +26,7 @@ export default function Stats({ todos, onSortBy }) {
         </button>
       </div>
 
-      <div>Clear Completed</div>
+      <button onClick={handleClearTodo}>Clear Completed</button>
     </div>
   );
 }

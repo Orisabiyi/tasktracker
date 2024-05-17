@@ -35,7 +35,7 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   html {
     font-size: 31.25%;
   }
@@ -49,7 +49,7 @@ body {
   color: var(--very-light-gray);
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   body {
     font-size: 2.2rem;
   }
@@ -70,7 +70,7 @@ body {
     var(--very-dark-blue);
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   .app {
     background: url(../public/images/bg-mobile-light.jpg) no-repeat top
       var(--very-light-gray);
@@ -104,7 +104,7 @@ body {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   .app-container {
     width: 95%;
     height: auto;
@@ -168,7 +168,7 @@ body {
   color: var(--light-dark-grayish-blue);
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   .todo-container {
     border-radius: 1rem;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
@@ -231,9 +231,13 @@ body {
   gap: 2rem;
 }
 
-@media only screen and (max-width: 37.5rem) {
+@media only screen and (max-width: 23.44rem) {
   .stats {
     grid-template-columns: repeat(2, auto);
+  }
+
+  .todo-container-dark .stats div:nth-of-type(2) {
+    background-color: var(--very-dark-blue);
   }
 
   .stats div:nth-of-type(2) {

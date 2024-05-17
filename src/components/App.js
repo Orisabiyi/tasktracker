@@ -45,7 +45,7 @@ export default function App() {
               sortBy={sortBy}
               onToggleItem={handleToggleItem}
             />
-            <Stats todos={todos} onSortBy={handleSortBy} />
+            <Stats todos={todos} onSetTodo={setTodo} onSortBy={handleSortBy} />
           </div>
         )}
       </div>
