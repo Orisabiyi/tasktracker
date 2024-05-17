@@ -35,12 +35,24 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 37.5rem) {
+  html {
+    font-size: 31.25%;
+  }
+}
+
 body {
   font-size: 1.8rem;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   line-height: 1.2;
   color: var(--very-light-gray);
+}
+
+@media only screen and (max-width: 37.5rem) {
+  body {
+    font-size: 2.2rem;
+  }
 }
 
 .app {
@@ -56,6 +68,19 @@ body {
 .app-dark {
   background: url(../public/images/bg-desktop-dark.jpg) no-repeat top
     var(--very-dark-blue);
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .app {
+    background: url(../public/images/bg-mobile-light.jpg) no-repeat top
+      var(--very-light-gray);
+    padding: 14rem 4rem;
+  }
+
+  .app-dark {
+    background: url(../public/images/bg-mobile-dark.jpg) no-repeat top
+      var(--very-dark-blue);
+  }
 }
 
 .app-container {
@@ -77,6 +102,18 @@ body {
   font-size: 4rem;
   letter-spacing: 1.5rem;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .app-container {
+    width: 95%;
+    height: auto;
+    /* position: relative; */
+  }
+
+  .app-title {
+    margin-bottom: 2rem;
+  }
 }
 
 .create-todo {
@@ -123,11 +160,19 @@ body {
   border-radius: 0.5rem;
   background-color: var(--very-light-gray);
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .todo-container-dark {
   background: var(--very-dark-blue);
   color: var(--light-dark-grayish-blue);
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .todo-container {
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  }
 }
 
 .todo-container-dark .todo-list {
@@ -184,6 +229,26 @@ body {
 .stats div {
   display: flex;
   gap: 2rem;
+}
+
+@media only screen and (max-width: 37.5rem) {
+  .stats {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .stats div:nth-of-type(2) {
+    background-color: var(--very-light-gray);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+
+    justify-content: center;
+
+    position: absolute;
+    width: 100%;
+    bottom: -8rem;
+    left: 0;
+  }
 }
 
 button {
