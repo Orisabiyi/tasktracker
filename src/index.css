@@ -139,6 +139,7 @@ body {
   padding: 2rem 3rem;
   color: var(--dark-grayish-blue);
   gap: 2rem;
+  cursor: pointer;
 }
 
 .stats div {
@@ -146,6 +147,18 @@ body {
   gap: 2rem;
 }
 
-.stats div span {
-  display: block;
+button {
+  font-size: inherit;
+  color: inherit;
+  display: inline-block;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.active {
+  background: var(--check-bg);
+  background-clip: text;
+  color: transparent;
 }

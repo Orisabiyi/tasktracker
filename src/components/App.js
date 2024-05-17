@@ -5,6 +5,8 @@ import TodoList from "./TodoList";
 
 export default function App() {
   const [todos, setTodo] = useState([]);
+  const [sortBy, setSortBy] = useState("all");
+  const [isDark, setIsDark] = useState(false);
 
   function handleTodo(newTodo) {
     setTodo((todos) => [...todos, newTodo]);
@@ -19,15 +21,29 @@ export default function App() {
     );
   }
 
+  function handleSortBy(e) {
+    setSortBy(e.target.value);
+    console.log(e.target.value);
+  }
+
+  function handleIsDark() {
+    setIsDark((isDark) => !isDark);
+  }
+
   return (
     <div className="app">
       <div className="app-container">
-        <AppTitle />
+        <AppTitle onIsDark={handleIsDark} />
 
         <CreateTodo onTodo={handleTodo} />
 
         {todos.length !== 0 ? (
-          <TodoList todos={todos} onToggleItem={handleToggleItem} />
+          <TodoList
+            todos={todos}
+            sortBy={sortBy}
+            onToggleItem={handleToggleItem}
+            onSortBy={handleSortBy}
+          />
         ) : (
           ""
         )}

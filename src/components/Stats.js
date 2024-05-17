@@ -1,12 +1,20 @@
-export default function Stats() {
+export default function Stats({ todos, onSortBy }) {
+  const todoLength = todos.filter((todo) => todo.completed !== true).length;
+
   return (
     <li className="stats">
-      <div> X items left</div>
+      <div> {todoLength} items left</div>
 
       <div>
-        <span>All</span>
-        <span>Active</span>
-        <span>Completed</span>
+        <button value="all" onClick={onSortBy}>
+          All
+        </button>
+        <button value="active" onClick={onSortBy}>
+          Active
+        </button>
+        <button value="completed" onClick={onSortBy}>
+          Completed
+        </button>
       </div>
 
       <div>Clear Completed</div>
