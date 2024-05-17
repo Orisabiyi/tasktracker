@@ -133,6 +133,19 @@ body {
 }
 
 .stats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   justify-content: space-between;
+  padding: 2rem 3rem;
+  color: var(--dark-grayish-blue);
+  gap: 2rem;
+}
+
+.stats div {
+  display: flex;
+  gap: 2rem;
+}
+
+.stats div span {
+  display: block;
 }

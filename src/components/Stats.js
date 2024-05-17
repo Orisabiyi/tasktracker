@@ -1,7 +1,7 @@
 export default function Stats() {
   return (
     <li className="stats">
-      <span> X items left</span>
+      <div> X items left</div>
 
       <div>
         <span>All</span>
@@ -9,7 +9,7 @@ export default function Stats() {
         <span>Completed</span>
       </div>
 
-      <span>clear completed</span>
+      <div>Clear Completed</div>
     </li>
   );
 }
