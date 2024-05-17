@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CreateTodo({ onTodo }) {
+export default function CreateTodo({ onTodo, isDark }) {
   const [task, setTask] = useState("");
 
   function handleSubmit(e) {
@@ -21,6 +21,7 @@ export default function CreateTodo({ onTodo }) {
         placeholder="Create a new todo..."
         value={task}
         onChange={(e) => setTask(e.target.value)}
+        className={isDark && "input-dark"}
       />
     </form>
   );

@@ -31,16 +31,17 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${isDark && "app-dark"}`}>
       <div className="app-container">
-        <AppTitle onIsDark={handleIsDark} />
+        <AppTitle isDark={isDark} onIsDark={handleIsDark} />
 
-        <CreateTodo onTodo={handleTodo} />
+        <CreateTodo onTodo={handleTodo} isDark={isDark} />
 
         {todos.length !== 0 ? (
           <TodoList
             todos={todos}
             sortBy={sortBy}
+            isDark={isDark}
             onToggleItem={handleToggleItem}
             onSortBy={handleSortBy}
           />

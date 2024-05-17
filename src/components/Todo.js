@@ -1,4 +1,4 @@
-export default function Todo({ todo, onToggleItem }) {
+export default function Todo({ todo, onToggleItem, isDark }) {
   return (
     <li onClick={() => onToggleItem(todo.id)}>
       <div
@@ -7,9 +7,7 @@ export default function Todo({ todo, onToggleItem }) {
         {todo.completed && <img src="images/icon-check.svg" alt="check icon" />}
       </div>
 
-      <span className={todo.completed ? "todo-completed" : ""}>
-        {todo.task}
-      </span>
+      <span className={todo.completed && "todo-completed"}>{todo.task}</span>
     </li>
   );
 }

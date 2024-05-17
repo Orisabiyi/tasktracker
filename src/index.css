@@ -45,13 +45,18 @@ body {
 }
 
 .app {
-  background: url(../public/images/bg-desktop-light.jpg) no-repeat top;
-  background-color: var(--very-light-gray);
+  background: url(../public/images/bg-desktop-light.jpg) no-repeat top
+    var(--very-light-gray);
   min-height: 100vh;
   padding: 8rem;
 
   display: flex;
   justify-content: center;
+}
+
+.app-dark {
+  background: url(../public/images/bg-desktop-dark.jpg) no-repeat top
+    var(--very-dark-blue);
 }
 
 .app-container {
@@ -89,6 +94,12 @@ body {
   outline: none;
 }
 
+.create-todo .input-dark {
+  border: 1px solid var(--very-dark-blue);
+  background: var(--very-dark-blue);
+  color: var(--light-grayish-blue);
+}
+
 .check-todo {
   position: absolute;
   top: 50%;
@@ -117,6 +128,11 @@ body {
   list-style: none;
 }
 
+.todo-list-dark {
+  background: var(--very-dark-blue);
+  color: var(--light-dark-grayish-blue);
+}
+
 .todo-list li:not(:last-child) {
   padding: 2.5rem 7rem;
   position: relative;
@@ -127,9 +143,17 @@ body {
   border-bottom: 1px solid var(--very-light-grayish-blue);
 }
 
+.todo-list-dark li:not(:last-child) {
+  border-bottom: 1px solid var(--very-dark-grayish-blue);
+}
+
 .todo-completed {
   text-decoration: line-through;
   color: var(--light-grayish-blue);
+}
+
+.todo-completed-dark {
+  color: var(--dark-grayish-blue);
 }
 
 .stats {
@@ -148,7 +172,7 @@ body {
 }
 
 button {
-  font-size: inherit;
+  font: inherit;
   color: inherit;
   display: inline-block;
   background: none;

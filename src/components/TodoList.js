@@ -1,7 +1,13 @@
 import Stats from "./Stats";
 import Todo from "./Todo";
 
-export default function TodoList({ todos, sortBy, onToggleItem, onSortBy }) {
+export default function TodoList({
+  todos,
+  sortBy,
+  isDark,
+  onToggleItem,
+  onSortBy,
+}) {
   let sortedTodo;
 
   if (sortBy === "all") sortedTodo = todos;
@@ -18,9 +24,14 @@ export default function TodoList({ todos, sortBy, onToggleItem, onSortBy }) {
   console.log(sortedTodo);
 
   return (
-    <ul className="todo-list">
+    <ul className={`todo-list ${isDark && "todo-list-dark"}`}>
       {sortedTodo.map((todo) => (
-        <Todo todo={todo} onToggleItem={onToggleItem} key={todo.id} />
+        <Todo
+          todo={todo}
+          onToggleItem={onToggleItem}
+          isDark={isDark}
+          key={todo.id}
+        />
       ))}
 
       <Stats todos={todos} onSortBy={onSortBy} />
