@@ -1,3 +1,11 @@
-export default function TodoList() {
-  return <ul className="todo-list"></ul>;
+import Todo from "./Todo";
+
+export default function TodoList({ todos }) {
+  return (
+    <ul className="todo-list">
+      {todos.map((todo) => (
+        <Todo todo={todo} key={todo.id} />
+      ))}
+    </ul>
+  );
 }

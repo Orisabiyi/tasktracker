@@ -10,7 +10,11 @@
 
 :root {
   --bright-blue: hsl(220, 98%, 61%);
-  --check-bg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --check-bg: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 
   --very-light-gray: hsl(0, 0%, 98%);
   --very-light-grayish-blue: hsl(236, 33%, 92%);
@@ -51,7 +55,7 @@ body {
 }
 
 .app-container {
-  width: 45%;
+  width: 50%;
   flex: 0 0 auto;
 
   display: flex;
@@ -80,7 +84,7 @@ body {
   font: inherit;
   padding: 2rem 7rem;
 
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid #fff;
   outline: none;
 }
@@ -95,4 +99,25 @@ body {
   height: 3rem;
   border-radius: 50%;
   border: 1px solid #eee;
+}
+
+.todo-list {
+  color: var(--very-dark-grayish-blue);
+  background-color: var(--very-light-gray);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  list-style: none;
+}
+
+.todo-list li {
+  padding: 2.5rem 7rem;
+  position: relative;
+}
+
+.todo-list li:not(:last-child) {
+  border-bottom: 1px solid var(--very-light-grayish-blue);
+}
+
+.check-todo-active {
+  background: var(--check-bg);
 }

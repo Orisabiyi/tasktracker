@@ -1,9 +1,10 @@
 import { useState } from "react";
 import AppTitle from "./AppTitle";
 import CreateTodo from "./CreateTodo";
+import TodoList from "./TodoList";
 
 export default function App() {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodo] = useState([]);
 
   function handleTodo(newTodo) {
     setTodo((todos) => [...todos, newTodo]);
@@ -14,6 +15,7 @@ export default function App() {
         <AppTitle />
 
         <CreateTodo onTodo={handleTodo} />
+        {todos.length !== 0 ? <TodoList todos={todos} /> : ""}
       </div>
     </div>
   );
