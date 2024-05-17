@@ -25,7 +25,7 @@
 
   --very-dark-blue: hsl(235, 21%, 11%);
   --very-dark-saturated-blue: hsl(235, 24%, 19%);
-  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-dark-grayish-blue: hsl(234, 39%, 85%);
   --light-grayish-blue-hover: hsl(236, 33%, 92%);
   --dark-grayish-blue: hsl(234, 11%, 52%);
   --very-dark-grayish-blue--1: hsl(233, 14%, 35%);
@@ -99,6 +99,14 @@ body {
   height: 3rem;
   border-radius: 50%;
   border: 1px solid #eee;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-todo-active {
+  background: var(--check-bg);
 }
 
 .todo-list {
@@ -112,12 +120,14 @@ body {
 .todo-list li {
   padding: 2.5rem 7rem;
   position: relative;
+  cursor: pointer;
 }
 
 .todo-list li:not(:last-child) {
   border-bottom: 1px solid var(--very-light-grayish-blue);
 }
 
-.check-todo-active {
-  background: var(--check-bg);
+.todo-completed {
+  text-decoration: line-through;
+  color: var(--light-grayish-blue);
 }
