@@ -13,6 +13,10 @@ export default function App() {
     setTodo((todos) => [...todos, newTodo]);
   }
 
+  function handleDeleteItem(id) {
+    setTodo((todos) => todos.filter((todo) => todo.id !== id));
+  }
+
   function handleToggleItem(id) {
     console.log(todos.filter((todo) => todo.id === id));
     setTodo((todos) =>
@@ -44,6 +48,7 @@ export default function App() {
               todos={todos}
               sortBy={sortBy}
               onToggleItem={handleToggleItem}
+              onDelItem={handleDeleteItem}
             />
 
             <Stats todos={todos} onSetTodo={setTodo} onSortBy={handleSortBy} />

@@ -185,13 +185,26 @@ body {
 }
 
 .todo-list li {
-  padding: 2.5rem 7rem;
+  border-bottom: 1px solid var(--very-light-grayish-blue);
+  padding: 2.5rem 3rem 2.5rem 7rem;
   position: relative;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.todo-list li {
-  border-bottom: 1px solid var(--very-light-grayish-blue);
+.todo-list li div:nth-of-type(2) {
+  width: 4%;
+  height: auto;
+}
+
+.todo-list li div:nth-of-type(2) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .todo-container-dark li {

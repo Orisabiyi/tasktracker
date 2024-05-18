@@ -1,6 +1,6 @@
-export default function Todo({ todo, onToggleItem }) {
+export default function Todo({ todo, onToggleItem, onDelItem }) {
   return (
-    <li onClick={() => onToggleItem(todo.id)}>
+    <li onClick={(e) => onToggleItem(todo.id)}>
       <div
         className={`check-todo ${todo.completed ? "check-todo-active" : ""}`}
       >
@@ -9,9 +9,9 @@ export default function Todo({ todo, onToggleItem }) {
 
       <span className={todo.completed && "todo-completed"}>{todo.task}</span>
 
-      <span>
+      <div onClick={() => onDelItem(todo.id)}>
         <img src="images/icon-cross.svg" alt="close-icon" />
-      </span>
+      </div>
     </li>
   );
 }

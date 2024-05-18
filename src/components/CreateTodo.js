@@ -5,12 +5,12 @@ export default function CreateTodo({ onTodo, isDark }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!task) return alert("Provide a task");
+
     const todo = { task, id: crypto.randomUUID(), completed: false };
 
-    // add task to todo list
-    onTodo(todo);
-
-    setTask("");
+    onTodo(todo); // add task to todo list
+    setTask(""); // reset task input
   }
 
   return (
@@ -21,7 +21,7 @@ export default function CreateTodo({ onTodo, isDark }) {
         placeholder="Create a new todo..."
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        className={isDark && "input-dark"}
+        className={isDark ? "input-dark" : ""}
       />
     </form>
   );

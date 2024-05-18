@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-export default function TodoList({ todos, sortBy, onToggleItem }) {
+export default function TodoList({ todos, sortBy, onToggleItem, onDelItem }) {
   let sortedTodo;
 
   if (sortBy === "all") sortedTodo = todos;
@@ -17,7 +17,12 @@ export default function TodoList({ todos, sortBy, onToggleItem }) {
   return (
     <ul className="todo-list">
       {sortedTodo.map((todo) => (
-        <Todo todo={todo} onToggleItem={onToggleItem} key={todo.id} />
+        <Todo
+          todo={todo}
+          onToggleItem={onToggleItem}
+          onDelItem={onDelItem}
+          key={todo.id}
+        />
       ))}
     </ul>
   );
