@@ -2,12 +2,8 @@ export default function Stats({ todos, onSortBy, onSetTodo }) {
   const todoLength = todos.filter((todo) => todo.completed !== true).length;
 
   function handleClearTodo() {
-    if (
-      window.confirm(
-        "Are you sure you want to clear the list. There is no turning back"
-      )
-    )
-      onSetTodo([]);
+    window.confirm("You want to clear the list of completed task.") &&
+      onSetTodo((todos) => todos.filter((todo) => todo.completed !== true));
   }
 
   return (

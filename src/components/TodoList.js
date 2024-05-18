@@ -14,8 +14,6 @@ export default function TodoList({ todos, sortBy, onToggleItem }) {
       .slice()
       .sort((a, b) => Number(b.completed) - Number(a.completed));
 
-  console.log(sortedTodo);
-
   return (
     <ul className="todo-list">
       {sortedTodo.map((todo) => (

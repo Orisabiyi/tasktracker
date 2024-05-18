@@ -32,7 +32,7 @@ export default function App() {
   }
 
   return (
-    <div className={`app ${isDark && "app-dark"}`}>
+    <div className={`app ${isDark ? "app-dark" : ""}`}>
       <div className="app-container">
         <AppTitle isDark={isDark} onIsDark={handleIsDark} />
 
@@ -45,6 +45,7 @@ export default function App() {
               sortBy={sortBy}
               onToggleItem={handleToggleItem}
             />
+
             <Stats todos={todos} onSetTodo={setTodo} onSortBy={handleSortBy} />
           </div>
         )}
