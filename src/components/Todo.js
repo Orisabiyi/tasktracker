@@ -1,6 +1,6 @@
 export default function Todo({ todo, onToggleItem, onDelItem }) {
   return (
-    <li onClick={(e) => onToggleItem(todo.id)}>
+    <li onClick={() => onToggleItem(todo.id)}>
       <div
         className={`check-todo ${todo.completed ? "check-todo-active" : ""}`}
       >
