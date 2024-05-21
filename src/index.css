@@ -9,7 +9,7 @@
 }
 
 :root {
-  --bright-blue: hsl(220, 98%, 61%);
+  --bright-blue: hsla(220, 98%, 61%, 0.626);
   --check-bg: linear-gradient(
     to right,
     hsl(192, 100%, 67%),
@@ -35,6 +35,12 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   html {
     font-size: 31.25%;
@@ -47,6 +53,12 @@ body {
   font-weight: 400;
   line-height: 1.2;
   color: var(--very-light-gray);
+}
+
+@media only screen and (max-width: 56.25em) {
+  body {
+    font-size: 1.8rem;
+  }
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -70,10 +82,16 @@ body {
     var(--very-dark-blue);
 }
 
+@media only screen and (max-width: 56.25em) {
+  .app {
+    padding: 12rem 4rem;
+    background-size: 150%;
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   .app {
-    padding: 14rem 4rem;
-    background-size: 200% 22vh;
+    padding: 10rem 4rem;
   }
 }
 
@@ -108,6 +126,25 @@ body {
   font-size: 4rem;
   letter-spacing: 1.5rem;
   text-transform: uppercase;
+}
+
+.app-title button {
+  background: var(--bright-blue);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+}
+
+/* .app-title img {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.412);
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+} */
+
+@media only screen and (max-width: 56.25em) {
+  .app-container {
+    width: 70%;
+  }
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -202,7 +239,7 @@ body {
 }
 
 .todo-list li div:nth-of-type(2) {
-  width: 4%;
+  width: 3%;
   height: auto;
 }
 
@@ -266,6 +303,7 @@ body {
     padding: 2rem 3rem;
 
     justify-content: center;
+    gap: 6rem;
 
     position: absolute;
     width: 100%;

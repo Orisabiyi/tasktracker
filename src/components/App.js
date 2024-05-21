@@ -51,7 +51,12 @@ export default function App() {
               onDelItem={handleDeleteItem}
             />
 
-            <Stats todos={todos} onSetTodo={setTodo} onSortBy={handleSortBy} />
+            <Stats
+              todos={todos}
+              sortBy={sortBy}
+              onSetTodo={setTodo}
+              onSortBy={handleSortBy}
+            />
           </div>
         )}
       </div>
