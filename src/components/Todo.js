@@ -7,7 +7,9 @@ export default function Todo({ todo, onToggleItem, onDelItem }) {
         {todo.completed && <img src="images/icon-check.svg" alt="check icon" />}
       </div>
 
-      <span className={todo.completed && "todo-completed"}>{todo.task}</span>
+      <span className={todo.completed ? "todo-completed" : ""}>
+        {todo.task}
+      </span>
 
       <div onClick={() => onDelItem(todo.id)}>
         <img src="images/icon-cross.svg" alt="close-icon" />

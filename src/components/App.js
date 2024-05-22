@@ -28,7 +28,6 @@ export default function App() {
 
   function handleSortBy(e) {
     setSortBy(e.target.value);
-    console.log(e.target.value);
   }
 
   function handleIsDark() {
@@ -37,13 +36,22 @@ export default function App() {
 
   return (
     <div className={`app ${isDark ? "app-dark" : ""}`}>
+      <button onClick={handleIsDark}>
+        <img
+          src={isDark ? "images/icon-sun.svg" : "images/icon-moon.svg"}
+          alt="an icon that depicts current mode of the appliation either"
+        />
+      </button>
+
       <div className="app-container">
-        <AppTitle isDark={isDark} onIsDark={handleIsDark} />
+        <AppTitle />
 
         <CreateTodo onTodo={handleTodo} isDark={isDark} />
 
         {todos.length !== 0 && (
-          <div className={`todo-container ${isDark && "todo-container-dark"}`}>
+          <div
+            className={`todo-container ${isDark ? "todo-container-dark" : ""}`}
+          >
             <TodoList
               todos={todos}
               sortBy={sortBy}
