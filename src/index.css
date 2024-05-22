@@ -63,7 +63,7 @@ body {
 
 @media only screen and (max-width: 37.5em) {
   body {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -182,7 +182,7 @@ body {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  border: 1px solid #eee;
+  border: 2.5px solid var(--dark-grayish-blue);
 
   display: flex;
   justify-content: center;
@@ -282,8 +282,8 @@ body {
 }
 
 .stats button {
+  font-weight: bold;
   cursor: pointer;
-  text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.368);
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -294,6 +294,10 @@ body {
 
   .todo-container-dark .stats div:nth-of-type(2) {
     background-color: var(--very-dark-blue);
+  }
+
+  .stats div:nth-of-type(1) {
+    font-size: 2.5rem;
   }
 
   .stats div:nth-of-type(2) {
@@ -307,8 +311,14 @@ body {
 
     position: absolute;
     width: 100%;
-    bottom: -8rem;
+    bottom: -10rem;
     left: 0;
+  }
+
+  .stats button {
+    border: 1.5px solid var(--dark-grayish-blue);
+    border-radius: 3rem;
+    padding: 1rem 3rem;
   }
 }
 
