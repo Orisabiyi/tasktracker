@@ -241,7 +241,21 @@ body {
 
 .todo-list {
   color: var(--very-dark-grayish-blue);
+  max-height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
   list-style: none;
+}
+
+.todo-list::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border-width: 1px;
+  background-color: var(--dark-grayish-blue);
 }
 
 .todo-list li {
