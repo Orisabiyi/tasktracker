@@ -3,9 +3,10 @@ import AppTitle from "./AppTitle";
 import CreateTodo from "./CreateTodo";
 import Stats from "./Stats";
 import TodoList from "./TodoList";
+import { useLocalStorage } from "../state/useLocalStorage";
 
 export default function App() {
-  const [todos, setTodo] = useState([]);
+  const [todos, setTodo] = useLocalStorage("todos");
   const [sortBy, setSortBy] = useState("all");
   const [isDark, setIsDark] = useState(false);
 
