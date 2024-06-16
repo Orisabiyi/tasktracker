@@ -8,7 +8,6 @@ export default function CreateTodo({ onTodo, isDark }) {
     if (!task) return alert("Provide a task");
 
     const todo = { task, id: crypto.randomUUID(), completed: false };
-
     onTodo(todo); // add task to todo list
     setTask(""); // reset task input
   }

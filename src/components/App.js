@@ -19,7 +19,6 @@ export default function App() {
   }
 
   function handleToggleItem(id) {
-    console.log(todos.filter((todo) => todo.id === id));
     setTodo((todos) =>
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
